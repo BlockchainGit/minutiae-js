@@ -1,0 +1,35 @@
+{
+  "name": "minutiae",
+  "version": "0.0.1",
+  "private": true,
+  "license": "GNU General Public License v3.0",
+  "author": "Warwick Allen",
+  "repository": "BlockchainGit/minutiae-js",
+  "engines": {
+    "node": "8.x.x"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "lint": "repo-tools lint",
+    "pretest": "npm run lint",
+    "system-test": "repo-tools test app",
+    "test": "npm run system-test"
+  },
+  "dependencies": {
+    "@google-cloud/datastore": "1.4.0",
+    "express": "4.16.2",
+    "yargs": "10.0.3"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "2.2.3"
+  },
+  "cloud-repo-tools": {
+    "test": {
+      "app": {
+        "msg": "Last 10 visits:"
+      }
+    },
+    "requiresKeyFile": true,
+    "requiresProjectId": true
+  }
+}
